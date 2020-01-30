@@ -1,0 +1,69 @@
+
+<!-- <body class="text-center">
+    <form class="form-signin" name="loginForm" #loginForm="ngForm" (submit)="loginSubmit(loginForm)">
+        <h1 class="h3 mb-3 font-weight-normal">Please login</h1>
+        <label for="inputEmail" class="sr-only">Email address</label>
+        <input type="email" id="inputEmail" class="form-control" placeholder="Email address" required [(ngModel)]="loginData.email" #email="ngModel" name="email">
+        <label for="inputPassword" class="sr-only">Password</label>
+        <input type="password" id="inputPassword" class="form-control" placeholder="Password" required [(ngModel)]="loginData.password" #password="ngModel" name="password" minlength="5">
+        
+        <button class="btn btn-lg btn-primary btn-block" type="submit">Login</button>
+        <p>Don't have an account?, <a href="login">Register</a> here...</p>
+        
+    </form>
+</body> -->
+<div class="login-container">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="text-center m-b-md">
+                <h3>PLEASE LOGIN TO APP</h3>
+                <!-- <small>This is the best app ever!</small> -->
+            </div>
+            <div class="hpanel">
+                <div class="panel-body">
+                        <form id="loginForm" name="loginForm" #loginForm="ngForm" (submit)="loginSubmit(loginForm)">
+                            <div class="form-group">
+                                <alert type="danger" *ngIf="loginData.isUnAuthorised">
+                                    <strong>Email</strong> or <strong>Password</strong> is incorrect
+                                </alert>
+                            </div>
+                            <div class="form-group">
+                                <label class="control-label" for="username">Email</label>
+                                <input type="email" placeholder="example@gmail.com" minlength="3" title="Please enter you email" required value="" name="email" id="username" [(ngModel)]="loginData.email" #email="ngModel" class="form-control">
+                                
+                                <span *ngIf="email.touched && email.invalid" class="text-right">
+                                    <span class="help-block text-danger small" *ngIf="email.errors.required">Username is required</span><br/>
+                                    <!-- <span class="help-block text-danger small" *ngIf="email.errors.invalid">Please enter a valid email</span>
+                                    <span class="help-block text-danger small" *ngIf="email.errors.minlength">Username must be at least 3 chars</span> -->
+                                    <span class="help-block text-danger small" *ngIf="email.errors.email">Username must be at least 3 chars</span>
+                                </span>
+
+                            </div>
+                            <div class="form-group">
+                                <label class="control-label" for="password">Password</label>
+                                <input type="password" title="Please enter your password" placeholder="******" required="" value="" id="password" class="form-control" [(ngModel)]="loginData.password" #password="ngModel" name="password">
+                                
+                                <span *ngIf="password.touched && password.invalid" class="text-right">
+                                    <span class="help-block text-danger small" *ngIf="password.errors.required">Password is required</span><br/>
+                                    <!-- <span class="help-block text-danger small" *ngIf="email.errors.invalid">Please enter a valid email</span> -->
+                                </span>
+
+                            </div>
+                            <!-- <div class="checkbox">
+                                <input type="checkbox" class="i-checks" checked>
+                                     Remember login
+                                <p class="help-block small">(if this is a private computer)</p>
+                            </div> -->
+                            <button class="btn btn-success btn-block" [disabled]="loginForm.invalid" type="submit">Login</button>
+                            <a class="btn btn-default btn-block" href="register">Register</a>
+                        </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12 text-center">
+            <!-- <strong>HOMER</strong> - AngularJS Responsive WebApp <br/> 2015 Copyright Company Name -->
+        </div>
+    </div>
+</div>

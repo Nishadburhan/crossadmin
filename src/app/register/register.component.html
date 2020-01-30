@@ -1,0 +1,94 @@
+<!-- <body class="text-center">
+    <form class="form-signin" name="signUpForm" #signUpForm="ngForm" (submit)="signUpSubmit(signUpForm)">
+        <h1 class="h3 mb-3 font-weight-normal">Please sign up</h1>
+        <label for="inputName" class="sr-only">Username</label>
+        <input type="text" id="inputName" class="form-control" placeholder="Username" required autofocus minlength="3" [(ngModel)]="signUpData.username" #username="ngModel" name="username">
+        <label for="inputEmail" class="sr-only">Email address</label>
+        <input type="email" id="inputEmail" class="form-control" placeholder="Email address" required [(ngModel)]="signUpData.email" #email="ngModel" name="email">
+        <label for="inputPassword" class="sr-only">Password</label>
+        <input type="password" id="inputPassword" class="form-control" placeholder="Password" required [(ngModel)]="signUpData.password" #password="ngModel" name="password" minlength="5">
+        <alert type="danger" *ngIf="signUpForm.touched && (username.invalid || email.invalid || password.invalid)">
+            <span *ngIf="username.touched && username.invalid">
+                <span *ngIf="username.errors.required"><strong>Username</strong> is required.</span>
+                <span *ngIf="username.errors.minlength"><strong>Username</strong><br/> must be at least 3 characters.</span>
+            </span>
+            <span *ngIf="email.touched && email.errors">
+                <br/>
+                <span *ngIf="email.errors.required"><strong>Email</strong> is required.</span>
+                <span *ngIf="email.errors.email"><strong>Email</strong><br/> Email must be a valid email addres.</span>
+                <div *ngIf="email.errors.email">Email must be a valid email address</div>
+            </span>
+            <span *ngIf="password.touched && password.invalid">
+                <br/>
+                <span *ngIf="password.errors.required"><strong>Password</strong> is required.</span>
+                <span *ngIf="password.errors.minlength"><strong>Password</strong><br/> Password must be at least 5 characters.</span>
+            </span>
+            
+        </alert>
+        <button class="btn btn-lg btn-primary btn-block" [disabled]="!signUpForm.valid" type="submit">Sign Up</button>
+        <p>Already have an account?, <a href="login">Login</a> here...</p>
+        
+    </form>
+</body> -->
+<div class="register-container">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="text-center m-b-md">
+                <h3>Registration</h3>
+                <!-- <small>Full suported AngularJS WebApp/Admin template with very clean and aesthetic style prepared for your next app. </small> -->
+            </div>
+            <div class="hpanel">
+                <div class="panel-body">
+                        <form name="signUpForm" #signUpForm="ngForm" (submit)="signUpSubmit(signUpForm)">
+                            <div class="row">
+                            <div class="form-group col-lg-12">
+                                <label>Username</label>
+                                <input type="text" placeholder="Your username" id="username" class="form-control" name="username" minlength="3" [(ngModel)]="signUpData.username" #username="ngModel" required>
+                                <span *ngIf="username.dirty && username.invalid">
+                                    <span class="help-block text-danger small" *ngIf="username.errors.required">Password is required<br/></span>
+                                    <span class="help-block text-danger small" *ngIf="username.errors.minlength">Username must be at least 3 characters<br/></span>
+                                </span>
+                            </div>
+                            <div class="form-group col-lg-6">
+                                <label>Email</label>
+                                <input type="email" id="email" placeholder="Your email" class="form-control" [(ngModel)]="signUpData.email" #email="ngModel" name="email" required>
+                                <span *ngIf="email.dirty && email.invalid">
+                                    <span class="help-block text-danger small" *ngIf="email.errors.required">Email is required<br/></span>
+                                    <span class="help-block text-danger small" *ngIf="email.errors.email">Email must be a valid email address<br/></span>
+                                </span>
+                            </div>
+                            <div class="form-group col-lg-6">
+                                <label>Password</label>
+                                <input type="password" id="password" placeholder="*********" class="form-control" [(ngModel)]="signUpData.password" #password="ngModel" name="password" minlength="5" required>
+                                <span *ngIf="password.dirty && password.invalid">
+                                    <span class="help-block text-danger small" *ngIf="password.errors.required">Password is required<br/></span>
+                                    <span class="help-block text-danger small" *ngIf="password.errors.minlength">Password must be at least 5 characters<br/></span>
+                                </span>
+                            </div>
+                            <!-- <div class="form-group col-lg-6">
+                                <label>Email Address</label>
+                                <input type="" value="" id="" class="form-control" name="">
+                            </div>
+                            <div class="form-group col-lg-6">
+                                <label>Repeat Email Address</label>
+                                <input type="" value="" id="" class="form-control" name="">
+                            </div>
+                            <div class="checkbox col-lg-12">
+                                <input type="checkbox" class="i-checks" checked>
+                                Sigh up for our newsletter
+                            </div> -->
+                            </div>
+                            <div class="text-center">
+                                <button class="btn btn-success" type="submit">Register</button>
+                            </div>
+                        </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12 text-center">
+            <!-- <strong>HOMER</strong> - AngularJS Responsive WebApp <br/> 2015 Copyright Company Name -->
+        </div>
+    </div>
+</div>
